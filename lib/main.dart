@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_omega_watch/brand_features.dart';
+import 'package:flutter_omega_watch/watch_series_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,7 +69,7 @@ class MyHomePage extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                height: 400,
+                height: 800,
                 color: Colors.brown[100],
               ),
               Padding(
@@ -120,46 +122,11 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
-                    Container(
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: Colors.brown[50],
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 8,
-                            color: Colors.brown.withValues(),
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children: const [
-                          Text(
-                            '品牌特色',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.brown,
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            '• 精準計時  \n'
-                            '• 經典設計  \n'
-                            '• 創新科技  \n'
-                            '• 奧運與太空任務指定',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black87,
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
-                        ],
-                      ),
-                    ),
+                    const SizedBox(height: 50),
+
+                    const BrandFeatures(),
                     const SizedBox(height: 30),
+
                     Stack(
                       alignment: Alignment.center,
                       children: [
@@ -171,83 +138,7 @@ class MyHomePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(16),
                           ),
                         ),
-                        Column(
-                          children: [
-                            const Text(
-                              '經典系列',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.brown,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    child: const Text(
-                                      'Speedmaster',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.brown,
-                                        fontFamily: 'Brush Script MT',
-                                        fontStyle: FontStyle.italic,
-                                        letterSpacing: 1.0,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ),
-
-                                //                            const SizedBox(width: 5),
-                                Expanded(
-                                  child: Container(
-                                    child: Image.asset(
-                                      'assets/omega-speedmaster-moonwatch.png',
-                                      width: 90,
-                                      height: 90,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-
-                                //                 const SizedBox(width: 10),
-                                Expanded(
-                                  child: Container(
-                                    child: const Text(
-                                      'Seamaster',
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w400,
-                                        color: Colors.brown,
-                                        fontFamily: 'Brush Script MT',
-                                        fontStyle: FontStyle.italic,
-                                        letterSpacing: 1.0,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ),
-
-                                //          const SizedBox(width: 10),
-                                Expanded(
-                                  child: Container(
-                                    child: Image.asset(
-                                      'assets/omega-seamaster-diver-300m.png',
-                                      width: 90,
-                                      height: 90,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                        WatchSeriesWidget(),
                       ],
                     ),
                   ],
